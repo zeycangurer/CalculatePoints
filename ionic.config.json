@@ -1,0 +1,7 @@
+{
+  "name": "CalculatePoints",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

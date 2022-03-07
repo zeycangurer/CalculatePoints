@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Puan Hesaplama Aracı</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card color="dark">
+    <ion-card-header>
+      <ion-card-subtitle>YKS</ion-card-subtitle>
+      <ion-card-title>Puan Hesaplama Aracı</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Lütfen sizden istenen netleri aşağıdaki alanlara giriniz.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-item>
+    <ion-range min="0" max="40" pin color="secondary" [(ngModel)]="mat">
+      <ion-label slot="start">MAT</ion-label>
+      <ion-label slot="end">{{mat}}</ion-label>
+    </ion-range>
+  </ion-item>
+  
+  <ion-item>
+    <ion-range min="0" max="40" pin color="secondary" [(ngModel)]="fen">
+      <ion-label slot="start">FEN</ion-label>
+      <ion-label slot="end">{{fen}}</ion-label>
+    </ion-range>
+  </ion-item>
+
+  <ion-item>
+    <ion-range min="0" max="40" pin color="secondary" [(ngModel)]="tur">
+      <ion-label slot="start">TÜR</ion-label>
+      <ion-label slot="end">{{tur}}</ion-label>
+    </ion-range>
+  </ion-item>
+
+  <ion-item>
+    <ion-range min="0" max="40" pin color="secondary" [(ngModel)]="sos">
+      <ion-label slot="start">SOS</ion-label>
+      <ion-label slot="end">{{sos}}</ion-label>
+    </ion-range>
+  </ion-item>
+
+  <ion-card color="{{(200+mat*1.7+fen*1.2+sos*0.9+tur*0.6)>350 ? 'dark':'danger'}}">
+    <ion-card-content>
+      YKS {{200+mat*1.7+fen*1.2+sos*0.9+tur*0.6}} Puan
+    </ion-card-content>
+  </ion-card>
+  
+
+  
+  
+</ion-content>
